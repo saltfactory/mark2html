@@ -1,0 +1,42 @@
+{
+  "name": "mark2html",
+  "version": "0.0.1",
+  "description": "Markdown to HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "mark2html-test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saltfactory/mark2html.git"
+  },
+  "keywords": [
+    "markdown",
+    "html",
+    "base64",
+    "datauri",
+    "tistory",
+    "blog"
+  ],
+  "author": {
+    "name": "SungKwang Song",
+    "email": "saltfactory@gmail.com",
+    "url": "https://twitter.com/saltfactory"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saltfactory/mark2html/issues",
+    "email": "saltfactory@gmail.com"
+  },
+  "homepage": "https://github.com/saltfactory/mark2html",
+  "devDependencies":{
+    "tracer":"latest"
+  },
+  "dependencies": {
+    "util-extend": "1.0.1",
+    "fs-extra":"0.10.0",
+    "marked":"0.3.2",
+    "mime":"1.0.0",
+    "nopt":"3.0.1"
+  }
+}

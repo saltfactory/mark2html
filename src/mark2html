@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+
+"use strict";
+var path = require('path');
+var fs = require('fs');
+var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+var argv = require('minimist');
+
+require(lib+'/mark2html.js').test('test');
+
+process.argv.forEach(function(val, index, array) {
+  console.log(index + ': ' + val);
+});
