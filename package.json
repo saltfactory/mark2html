@@ -2,7 +2,10 @@
   "name": "mark2html",
   "version": "0.0.1",
   "description": "Markdown to HTML",
-  "main": "index.js",
+  "main": "./lib/mark2html",
+  "bin":{
+    "mark2html":"./bin/mark2html"
+  },
   "scripts": {
     "test": "mark2html-test"
   },
@@ -33,10 +36,10 @@
     "tracer":"latest"
   },
   "dependencies": {
-    "util-extend": "1.0.1",
     "fs-extra":"0.10.0",
     "marked":"0.3.2",
     "mime":"1.0.0",
-    "nopt":"3.0.1"
+    "nopt":"3.0.1",
+    "tracer":"latest"
   }
 }
