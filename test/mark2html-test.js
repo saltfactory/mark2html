@@ -4,12 +4,13 @@
 var mark2html = require('../lib/mark2html');
 
 var options = {
-  src:'/Users/saltfactory/Dropbox/Blog/posts/2014-07-07-create-tistory-editor-package-in-atom-editor.md',
+  src:'/Users/saltfactory/Dropbox/Blog/posts/2014-07-16-create-passport-tistory.md',
   destDir:'/Users/saltfactory/Dropbox/Blog/output',
   imageCopy:true,
   datauri:true,
   markdownCopy:true,
   markdownDatauri:false,
+  highlight:false,
   marked:{
     gfm: true,
     tables: true,

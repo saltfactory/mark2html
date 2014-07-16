@@ -40,6 +40,7 @@
     "marked":"0.3.2",
     "mime":"1.0.0",
     "nopt":"3.0.1",
-    "tracer":"latest"
+    "tracer":"latest",
+    "highlight.js":"~8.1.0"
   }
 }
