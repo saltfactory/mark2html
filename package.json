@@ -41,6 +41,7 @@
     "mime":"1.0.0",
     "nopt":"3.0.1",
     "tracer":"latest",
-    "highlight.js":"~8.1.0"
+    "highlight.js":"~8.1.0",
+    "pygmentize-bundled":"~2.1.1"
   }
 }

@@ -10,7 +10,7 @@ var path = require('path'),
   nopt = require("nopt");
 
 
-var knownOpts = { "src": path, "dest": path, "md": Boolean, "img": Boolean, "datauri": Boolean, "cfg": path, "opt": String, "code":Boolean};
+var knownOpts = { "src": path, "dest": path, "md": Boolean, "img": Boolean, "datauri": Boolean, "cfg": path, "opt": String, "code":Number};
 var shortHands = { "s": ["-src"], "d": ["-dest"]};
 var parsed = nopt(knownOpts, shortHands, process.argv, 1);
 var options = {};

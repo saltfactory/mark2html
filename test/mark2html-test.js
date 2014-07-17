@@ -10,7 +10,7 @@ var options = {
   datauri:true,
   markdownCopy:true,
   markdownDatauri:false,
-  highlight:false,
+  highlight: 1, //0:false, 1:default(pygments), 2:higlight.js
   marked:{
     gfm: true,
     tables: true,
