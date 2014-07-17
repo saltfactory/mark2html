@@ -2,10 +2,10 @@
  * Created by saltfactory on 7/10/14.
  */
 var mark2html = require('../lib/mark2html');
-
+//var options = {}
 var options = {
   src:'/Users/saltfactory/Dropbox/Blog/posts/2014-07-16-create-passport-tistory.md',
-  destDir:'/Users/saltfactory/Dropbox/Blog/output',
+//  destDir:'/Users/saltfactory/Dropbox/Blog/output',
   imageCopy:true,
   datauri:true,
   markdownCopy:true,
