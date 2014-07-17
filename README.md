@@ -38,7 +38,7 @@ npm install -g mark2html
 | -md | 값 없이 옵션만 지정| .markdown 파일 dest로 복사|
 | -img | 값 없이 옵션만 지정| .markdown 파일 내용에 포함된 이미지를 dest로 함께 복사|
 | -datauri | 값 없이 옵션만 지정 | .markdown 파일에 포함된 이미지를 datauri로 변경하여 HTML에 적용 |
-| -code | 0:ignore, 1:pygments, 2:highlight.js|| 
+| -code | 0:ignore, 1:pygments, 2:highlight.js| .markdown 파일에 포함된 소스코드 블럭의 코드를 하이라이팅하기 위한 HTML 코드로 변한 | 
 
 
 
