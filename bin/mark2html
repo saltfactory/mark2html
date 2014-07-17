@@ -21,12 +21,14 @@ logger.print("*** start mark2html ***\n");
 var defaultCfg = path.join(process.env.HOME, '.mark2html.json');
 
 if (!fs.existsSync(defaultCfg)){
-  logger.error('디폴트 설정파일 ' + defaultCfg + ' 이 존재하지 않습니다. 기본 설정으로 진행합니다.');
+  logger.warn('Not found global options file! mark2html go on with default options');
+  logger.print("[Solution] You do create global options file. e.g. echo \"{'destDir':'/output'}\" > " + defaultCfg);
 }
 
 if (parsed.cfg) {
   if(!fs.existsSync(parsed.cfg)){
-    logger.error(parsed.cfg + " 설정파일이 존재하지 않습니다. 기본 설정으로 진행합니다.");
+    logger.warn('Not found global options file! mark2html go on with default options');
+    logger.print("[Solution] You do create global options file. e.g. echo \"{'destDir':'/output'}\" > " + defaultCfg);
   } else {
     options = util._extend(options, JSON.parse(fs.readFileSync(parsed.cfg)));
   }
