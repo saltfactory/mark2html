@@ -38,6 +38,7 @@ npm install -g mark2html
 | -md | 값 없이 옵션만 지정| .markdown 파일 dest로 복사|
 | -img | 값 없이 옵션만 지정| .markdown 파일 내용에 포함된 이미지를 dest로 함께 복사|
 | -datauri | 값 없이 옵션만 지정 | .markdown 파일에 포함된 이미지를 datauri로 변경하여 HTML에 적용 |
+| -code | 0:ignore, 1:pygments, 2:highlight.js|| 
 
 
 
@@ -104,6 +105,25 @@ mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfa
 ```
 mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -datauri
 ```
+
+#### `-code` 옵션 예제
+`-code` 디폴트값은 1 (pygments)이다. `-code` 옵션이 있으면 기본적으로 pygments를 사용해서 코드하이라이팅을 한다.
+```
+mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code
+```
+
+`-code` 값이 1일 경우 pygments([node-pygmentize-bundled](https://github.com/rvagg/node-pygmentize-bundled))를 사용해서 코드하이라이팅을 한다.
+```
+mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code 1
+```
+pygments의 style은 [pygments-css](https://github.com/richleland/pygments-css)에서 필요한 css를 선택하여 사용한다.
+
+
+`-code` 값이 2일 경우 [highlgiht.js](https://github.com/isagalaev/highlight.js)를 사용해서 코드하이라이팅을 한다.
+```
+mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code 2
+```
+
 
 
 ## local 모듈 설치
