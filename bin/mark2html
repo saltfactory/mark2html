@@ -10,7 +10,7 @@ var path = require('path'),
   nopt = require("nopt");
 
 
-var knownOpts = { "src": path, "dest": path, "md": Boolean, "img": Boolean, "datauri": Boolean, "cfg": path, "opt": String, "code":Number};
+var knownOpts = { "src": path, "dest": path, "md": Boolean, "img": Boolean, "datauri": Boolean, "mdatauri": Boolean, "cfg": path, "opt": String, "code":Number};
 var shortHands = { "s": ["-src"], "d": ["-dest"]};
 var parsed = nopt(knownOpts, shortHands, process.argv, 1);
 var options = {};
@@ -62,6 +62,10 @@ if (parsed.src) {
 
 if (parsed.datauri) {
   options = util._extend(options, {datauri: parsed.datauri});
+}
+
+if (parsed.mdatauri) {
+  options = util._extend(options, {markdownDatauri: parsed.mdatauri});
 }
 
 if (parsed.code) {
