@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="mark2html : Markdown to HTML" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>mark2html</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/saltfactory/mark2html">View on GitHub</a>
+
+          <h1 id="project_title">mark2html</h1>
+          <h2 id="project_tagline">Markdown to HTML</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/saltfactory/mark2html/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/saltfactory/mark2html/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="mark2html" class="anchor" href="#mark2html"><span class="octicon octicon-link"></span></a>mark2html</h1>
+
+<blockquote>
+<p>Markdown to HTML.</p>
+</blockquote>
+
+<h3>
+<a name="mark2html-features" class="anchor" href="#mark2html-features"><span class="octicon octicon-link"></span></a>
+<strong>mark2html</strong> features</h3>
+
+<ul>
+<li>using .json option file</li>
+<li>copy image files in .markdown file</li>
+<li>from image src to datauri in .markdown file</li>
+</ul><p><strong>mark2html</strong>은 Markdown 문서를 HTML 문서로 변환시켜서 저장할 수 있게 도와준다. mark2html은 markdown에 포함된 images를 일괄적으로 복사하거나 datauri로 변환해서 렌더링을 할 수 있다.</p>
+
+<h3>
+<a name="mark2html%EC%9D%98-%ED%8A%B9%EC%A7%95" class="anchor" href="#mark2html%EC%9D%98-%ED%8A%B9%EC%A7%95"><span class="octicon octicon-link"></span></a>
+<strong>mark2html</strong>의 특징</h3>
+
+<ul>
+<li>.json 옵션 파일을 사용</li>
+<li>.markdown 파일 안에 있는 img를 HTML이 변환되는 곳에 images 파일로 복사</li>
+<li>.markdown 파일 안에 있는 img의 src를 datauri로 변환</li>
+</ul><h1>
+<a name="mark2html-%EC%84%A4%EC%B9%98" class="anchor" href="#mark2html-%EC%84%A4%EC%B9%98"><span class="octicon octicon-link"></span></a>mark2html 설치</h1>
+
+<h2>
+<a name="global-%EC%84%A4%EC%B9%98" class="anchor" href="#global-%EC%84%A4%EC%B9%98"><span class="octicon octicon-link"></span></a>global 설치</h2>
+
+<p><code>mark2html</code>은 npm을 사용하여 간단하게 설치할 수 있다. mark2html을 global로 설치하면 터미널에서 mark2html 명령어를 사용할 수 있다.</p>
+
+<pre><code>npm install -g mark2html
+</code></pre>
+
+<h3>
+<a name="mark2html-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%98%B5%EC%85%98" class="anchor" href="#mark2html-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%98%B5%EC%85%98"><span class="octicon octicon-link"></span></a>mark2html 명령어 옵션</h3>
+
+<table>
+<thead><tr>
+<th>옵션</th>
+<th>옵션 값</th>
+<th>비고</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>-s / -src</td>
+<td>.markdown 파일의 경로 지정</td>
+<td></td>
+</tr>
+<tr>
+<td>-d / -dest</td>
+<td>결과물이 만들어질 디렉토리 경로 지정</td>
+<td></td>
+</tr>
+<tr>
+<td>-cfg</td>
+<td>옵션 파일 경로 지정</td>
+<td></td>
+</tr>
+<tr>
+<td>-opt</td>
+<td>옵션을 JSON 타입으로 지정</td>
+<td></td>
+</tr>
+<tr>
+<td>-md</td>
+<td>값 없이 옵션만 지정</td>
+<td>.markdown 파일 dest로 복사</td>
+</tr>
+<tr>
+<td>-img</td>
+<td>값 없이 옵션만 지정</td>
+<td>.markdown 파일 내용에 포함된 이미지를 dest로 함께 복사</td>
+</tr>
+<tr>
+<td>-datauri</td>
+<td>값 없이 옵션만 지정</td>
+<td>.markdown 파일에 포함된 이미지를 datauri로 변경하여 HTML에 적용</td>
+</tr>
+<tr>
+<td>-mdatauri</td>
+<td>값 없이 옵션만 지정</td>
+<td>.markdown 파일에 포함된 이미지를 datauri로 변경하여 복사되는 .md 파일에 적용</td>
+</tr>
+<tr>
+<td>-code</td>
+<td>0:ignore, 1:pygments, 2:highlight.js</td>
+<td>.markdown 파일에 포함된 소스코드 블럭의 코드를 하이라이팅하기 위한 HTML 코드로 변한</td>
+</tr>
+</tbody>
+</table><h4>
+<a name="-s-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-s-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-s</code> 옵션 예제</h4>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/2014-07-16-example.md
+</code></pre>
+
+<pre><code>mark2html -src /Users/saltfactory/blog/2014-07-16-example.md
+</code></pre>
+
+<h4>
+<a name="-d-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-d-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-d</code> 옵션 예제</h4>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output
+</code></pre>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -dest /User/saltfactory/blog/output
+</code></pre>
+
+<h4>
+<a name="-cfg-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-cfg-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-cfg</code> 옵션 예제</h4>
+
+<p>-cfg 옵션을 사용하면 여러가지 옵션 설정은 저장해서 불러와서 사용할 수 있다.</p>
+
+<ol>
+<li>먼저 옵션정보를 .json 파일로 만든다.</li>
+<li>-cfg 옵션을 사용하여 생성한 .json 파일의 경로를 추가한다.</li>
+</ol><pre><code>echo '{
+    "destDir": "/Users/saltfactory/blog/output",
+    "imageCopy":true,
+    "datauri":true,
+    "markdownCopy":true,
+    "markdownDatauri":false
+}' &gt; options.json
+</code></pre>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md  -cfg options.json
+</code></pre>
+
+<h4>
+<a name="-opt-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-opt-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-opt</code> 옵션 예제</h4>
+
+<pre><code>makr2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md \
+-d /User/saltfactory/blog/output \
+-opt '{ \
+    "destDir": "/Users/saltfactory/blog/output", \
+    "imageCopy":true, \
+    "datauri":true, \
+    "markdownCopy":true, \
+    "markdownDatauri":false \
+    }'
+</code></pre>
+
+<h4>
+<a name="-md-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-md-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-md</code> 옵션 예제</h4>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -md
+</code></pre>
+
+<h4>
+<a name="-img-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-img-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-img</code> 옵션 예제</h4>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -img
+</code></pre>
+
+<h4>
+<a name="-datauri-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-datauri-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-datauri</code> 옵션 예제</h4>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -datauri
+</code></pre>
+
+<h3>
+<a name="-mdatauri-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-mdatauri-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-mdatauri</code> 옵션 예제</h3>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -mdatauri
+</code></pre>
+
+<h4>
+<a name="-code-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C" class="anchor" href="#-code-%EC%98%B5%EC%85%98-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>
+<code>-code</code> 옵션 예제</h4>
+
+<p><code>-code</code> 디폴트값은 1 (pygments)이다. <code>-code</code> 옵션이 있으면 기본적으로 pygments를 사용해서 코드하이라이팅을 한다.</p>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code
+</code></pre>
+
+<p><code>-code</code> 값이 1일 경우 pygments(<a href="https://github.com/rvagg/node-pygmentize-bundled">node-pygmentize-bundled</a>)를 사용해서 코드하이라이팅을 한다.</p>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code 1
+</code></pre>
+
+<p>pygments의 style은 <a href="https://github.com/richleland/pygments-css">pygments-css</a>에서 필요한 css를 선택하여 사용한다.</p>
+
+<p><code>-code</code> 값이 2일 경우 <a href="https://github.com/isagalaev/highlight.js">highlgiht.js</a>를 사용해서 코드하이라이팅을 한다.</p>
+
+<pre><code>mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code 2
+</code></pre>
+
+<h2>
+<a name="local-%EB%AA%A8%EB%93%88-%EC%84%A4%EC%B9%98" class="anchor" href="#local-%EB%AA%A8%EB%93%88-%EC%84%A4%EC%B9%98"><span class="octicon octicon-link"></span></a>local 모듈 설치</h2>
+
+<p><code>mark2html</code> 명령어는 사용하지 않고 node.js의 모듈로 사용하기 위해서는 <strong>-g</strong> 옵션을 제외하고 node 프로젝트 디렉토리 안에서 다음과 같이 설치한다.</p>
+
+<pre><code>npm install mark2html
+</code></pre>
+
+<h4>
+<a name="nodejs-%EB%AA%A8%EB%93%88%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%98%88%EC%A0%9C" class="anchor" href="#nodejs-%EB%AA%A8%EB%93%88%EB%A1%9C-%EC%82%AC%EC%9A%A9%ED%95%98%EB%8A%94-%EC%98%88%EC%A0%9C"><span class="octicon octicon-link"></span></a>node.js 모듈로 사용하는 예제</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">mark2html</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'mark2html'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">src</span><span class="o">:</span><span class="s1">'/Users/saltfactory/blog/posts/2014-07-16-example.md'</span><span class="p">,</span>
+  <span class="nx">destDir</span><span class="o">:</span><span class="s1">'/Users/saltfactory/blog/output'</span><span class="p">,</span>
+  <span class="nx">imageCopy</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="nx">datauri</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="nx">markdownCopy</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+  <span class="nx">markdownDatauri</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+  <span class="nx">marked</span><span class="o">:</span><span class="p">{</span>
+    <span class="nx">gfm</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">tables</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">breaks</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">pedantic</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">sanitize</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">smartLists</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nx">smartypants</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">xhtml</span><span class="o">:</span> <span class="kc">true</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="nx">mark2html</span><span class="p">.</span><span class="nx">convert</span><span class="p">(</span><span class="nx">options</span><span class="p">);</span>
+
+</pre></div>
+
+<h2>
+<a name="homemark2htmljson-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC" class="anchor" href="#homemark2htmljson-%EA%B8%80%EB%A1%9C%EB%B2%8C-%EC%84%A4%EC%A0%95-%ED%8C%8C%EC%9D%BC"><span class="octicon octicon-link"></span></a>$HOME/.mark2html.json 글로벌 설정 파일</h2>
+
+<p><code>.mark2html.json</code>은 <strong>mark2html</strong>의 글로벌 설정 파일로 <code>$HOME</code> 디렉토리 밑에 위치한다. <code>mark2html</code>의 command 명령어는 <code>~/.mark2html.json</code> 파일의 옵션을 로드 한 후 동작한다.
+글로벌 설정 파일을 로드하더라도 command 옵션이 추가가되면 글로벌 설정 파일의 옵션을 갱신해서 command 옵션 값을 우선으로 한다. local 모듈로 설치를 하더라도 글로벌 설정파일을 사용할 수 있다.</p>
+
+<pre><code>echo '{
+    "destDir": "/Users/saltfactory/blog/output",
+    "imageCopy":true,
+    "datauri":true,
+    "markdownCopy":true,
+    "markdownDatauri":false,
+}' &gt; ~/.mark2html.json
+</code></pre>
+
+<h1>
+<a name="copyright-and-license" class="anchor" href="#copyright-and-license"><span class="octicon octicon-link"></span></a>Copyright and License</h1>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2014 SungKwang Song</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">mark2html maintained by <a href="https://github.com/saltfactory">saltfactory</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
