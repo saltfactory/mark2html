@@ -108,7 +108,7 @@ mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfa
 mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -datauri
 ```
 
-### `-mdatauri` 옵션 예제
+#### `-mdatauri` 옵션 예제
 ```
 mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -mdatauri
 ```
@@ -131,7 +131,7 @@ pygments의 style은 [pygments-css](https://github.com/richleland/pygments-css)�
 mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code 2
 ```
 
-### `-style` 옵션 예제
+#### `-style` 옵션 예제
 Markdown 문서에 이미지 마커중 alt의 값에 들어있는 `{}`값을 HTML로 변환할 때 `img` 태그의 `style` 값으로 변환한다.
 
 만약 Markdown 문서에 다음과 같이 이미지를 표현했다고 보자
