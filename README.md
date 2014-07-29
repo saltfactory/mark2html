@@ -40,6 +40,7 @@ npm install -g mark2html
 | -datauri | 값 없이 옵션만 지정 | .markdown 파일에 포함된 이미지를 datauri로 변경하여 HTML에 적용 |
 | -mdatauri | 값 없이 옵션만 지정 | .markdown 파일에 포함된 이미지를 datauri로 변경하여 복사되는 .md 파일에 적용 |
 | -code | 0:ignore, 1:pygments, 2:highlight.js| .markdown 파일에 포함된 소스코드 블럭의 코드를 하이라이팅하기 위한 HTML 코드로 변한 | 
+| -style | 값 없이 옵션만 지정 | .markdown 파일의 image의 alert에 style 속성을 분석해서 적용|
 
 
 
@@ -130,7 +131,21 @@ pygments의 style은 [pygments-css](https://github.com/richleland/pygments-css)�
 mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -code 2
 ```
 
+### `-style` 옵션 예제
+Markdown 문서에 이미지 마커중 alt의 값에 들어있는 `{}`값을 HTML로 변환할 때 `img` 태그의 `style` 값으로 변환한다.
 
+만약 Markdown 문서에 다음과 같이 이미지를 표현했다고 보자
+```markdown
+![Alt {width:320px;}](http://http://cfile8.uf.tistory.com/image/276B443353A1528A2F8CBA "Title")
+```
+`-style` 옵션을 추가하여 렌더링
+```
+mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -style
+```
+HTML 변환 결과
+```html
+<img src="http://cfile8.uf.tistory.com/image/276B443353A1528A2F8CBA" style="width:320px;" alt="Alt" title="Title"/>
+```
 
 ## local 모듈 설치
 `mark2html` 명령어는 사용하지 않고 node.js의 모듈로 사용하기 위해서는 **-g** 옵션을 제외하고 node 프로젝트 디렉토리 안에서 다음과 같이 설치한다.

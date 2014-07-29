@@ -4,7 +4,7 @@
   "description": "Markdown to HTML, mark2html is able to copy markdown and images in .md file or convert datauri with converted HTML file to destination directory",
   "main": "./lib/mark2html",
   "bin":{
-    "mark2html":"./bin/mark2html"
+    "mark2html":"./bin/mark2html.js"
   },
   "scripts": {
     "test": "mark2html-test"

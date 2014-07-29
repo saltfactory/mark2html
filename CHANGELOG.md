@@ -1,3 +1,20 @@
+0.0.4
+=====
+## feature
+- **add -style option** : image style attribute from image alt of Markdown
+
+from markdown
+```markdown
+![Alt {width:320px;}](http://http://cfile8.uf.tistory.com/image/276B443353A1528A2F8CBA "Title")
+```
+```
+mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -style
+```
+after rendering
+```html
+<img src="http://cfile8.uf.tistory.com/image/276B443353A1528A2F8CBA" style="width:320px;" alt="Alt" title="Title"/>
+```
+
 0.0.3
 ======
 

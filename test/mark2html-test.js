@@ -5,7 +5,7 @@ var mark2html = require('../lib/mark2html');
 //var options = {}
 var options = {
   "content": null,
-  "src": "/Users/saltfactory/Dropbox/Blog/posts/2014-07-22-migrate-git-repository.md",
+  "src": "/Users/saltfactory/Dropbox/Blog/posts/2014-06-20-create-hybird-app-push-notification-apn-gcm.md",
   "srcDir": null,
   "dest": null,
   "destDir": "/Users/saltfactory/Dropbox/Blog/output",
@@ -14,7 +14,8 @@ var options = {
   "datauri": true,
   "markdownCopy": true,
   "markdownDatauri": false,
-  "highlight": 2
+  "highlight": 1,
+  "imageStyle": false
 //  src:'/Users/saltfactory/Dropbox/Blog/posts/2014-07-22-migrate-git-repository.md',
 //  destDir:'/Users/saltfactory/Dropbox/Blog/output',
 //  imageCopy:true,
