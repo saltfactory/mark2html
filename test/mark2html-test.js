@@ -5,7 +5,7 @@ var mark2html = require('../lib/mark2html');
 //var options = {}
 var options = {
   "content": null,
-  "src": "/Projects/Repository/Saltfactory/saltfactory.net/series/_posts/2014-06-14-solve-external-link-tag-in-phonegap.md",
+  "src": "/Users/saltfactory/Dropbox/Blog/posts/2014-08-05-mark2html-v.0.0.5-upgrade.md",
   "srcDir": null,
   "dest": null,
   "destDir": "/Users/saltfactory/Dropbox/Blog/output",
