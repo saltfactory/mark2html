@@ -10,7 +10,7 @@ var path = require('path'),
   nopt = require("nopt");
 
 
-var knownOpts = { "src": path, "dest": path, "md": Boolean, "img": Boolean, "datauri": Boolean, "mdatauri": Boolean, "cfg": path, "opt": String, "code":Number, "style":Boolean};
+var knownOpts = { "src": path, "dest": path, "md": Boolean, "img": Boolean, "datauri": Boolean, "mdatauri": Boolean, "cfg": path, "opt": String, "code":Number, "style":Boolean, "skip-front-matter":Boolean};
 var shortHands = { "s": ["-src"], "d": ["-dest"]};
 var parsed = nopt(knownOpts, shortHands, process.argv, 1);
 var options = {};
@@ -74,6 +74,10 @@ if (parsed.code) {
 
 if (parsed.style) {
   options = util._extend(options, {imageStyle: parsed.style});
+}
+
+if (parsed["skip-front-matter"]) {
+  options = util._extend(options, {skipFrontMatter: parsed["skip-front-matter"]})
 }
 
 

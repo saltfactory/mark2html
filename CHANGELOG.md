@@ -1,3 +1,8 @@
+0.0.5
+=====
+## feature
+- **add -skip-front-matter** : when rendering Markdown, skip [front matter](http://jekyllrb.com/docs/frontmatter/) in [Jekyll](http://jekyllrb.com/)
+
 0.0.4
 =====
 ## feature

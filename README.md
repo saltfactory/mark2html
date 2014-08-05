@@ -41,6 +41,7 @@ npm install -g mark2html
 | -mdatauri | 값 없이 옵션만 지정 | .markdown 파일에 포함된 이미지를 datauri로 변경하여 복사되는 .md 파일에 적용 |
 | -code | 0:ignore, 1:pygments, 2:highlight.js| .markdown 파일에 포함된 소스코드 블럭의 코드를 하이라이팅하기 위한 HTML 코드로 변한 | 
 | -style | 값 없이 옵션만 지정 | .markdown 파일의 image의 alert에 style 속성을 분석해서 적용|
+| -skip-front-matter | 값 없이 옵션만 지정 | .markdown 파일의 jekyll의 font matter를 skip해서 HTML과 복사되는 .md 파일에 적용 |
 
 
 
@@ -146,6 +147,15 @@ HTML 변환 결과
 ```html
 <img src="http://cfile8.uf.tistory.com/image/276B443353A1528A2F8CBA" style="width:320px;" alt="Alt" title="Title"/>
 ```
+
+### `-skip-front-matter` 옵션 예제
+
+Markdown 문서 앞에 Jekyll의 [front matter](http://jekyllrb.com/docs/frontmatter/) 포멧이 있을 경우 렌더링 할 때 YAML 포멧의 front matter를 skip하고 HTML과 복사되는 .md 파일에 적용한다.
+
+```
+mark2html -s /Users/saltfactory/blog/posts/2014-07-16-example.md -d /User/saltfactory/blog/output -skip-front-matter
+```
+
 
 ## local 모듈 설치
 `mark2html` 명령어는 사용하지 않고 node.js의 모듈로 사용하기 위해서는 **-g** 옵션을 제외하고 node 프로젝트 디렉토리 안에서 다음과 같이 설치한다.
