@@ -5,14 +5,20 @@ var mark2html = require('../lib/mark2html');
 //var options = {}
 var options = {
   "content": null,
-  "src": "/Users/saltfactory/Dropbox/Blog/posts/2014-08-05-mark2html-v.0.0.5-upgrade.md",
+  "src": "/Users/saltfactory/Dropbox/Blog/posts/2015-03-10-introduce-node-gallery3.md",
   "srcDir": null,
   "dest": null,
   "destDir": "/Users/saltfactory/Dropbox/Blog/output",
   "subDir": true,
   "imageCopy": true,
-  "datauri": true,
   "markdownCopy": true,
+  //"gallery3":{
+  //    "host":"http://localhost",
+  //    "base":"/gallery3",
+  //    "rootItemId":1,
+  //    "requestKey":""
+  //},
+  "datauri": false,
   "markdownDatauri": false,
   "highlight": 1,
   "imageStyle": false,
@@ -36,3 +42,4 @@ var options = {
 //  }
 }
 mark2html.convert(options);
+
