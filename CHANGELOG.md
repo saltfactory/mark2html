@@ -1,3 +1,8 @@
+0.0.6
+=====
+## feature
+- galler3 option
+
 0.0.5
 =====
 ## feature
