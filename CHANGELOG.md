@@ -3,6 +3,11 @@
 ## feature
 - galler3 option
 
+0.0.6
+=====
+## feature
+- **add node-gallery3 option
+
 0.0.5
 =====
 ## feature
